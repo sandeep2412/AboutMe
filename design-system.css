@@ -598,7 +598,7 @@ img {
 
 .stats {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 16px;
   padding: 36px var(--gutter);
   max-width: var(--max-width);
@@ -643,6 +643,12 @@ img {
   text-transform: uppercase;
   color: var(--muted);
   margin-top: 6px;
+}
+
+@media (max-width: 960px) {
+  .stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media (max-width: 700px) {
@@ -733,12 +739,12 @@ img {
 }
 
 .org-logo {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   object-fit: contain;
-  border-radius: 4px;
+  border-radius: 6px;
   background: #fff;
-  padding: 2px;
+  padding: 3px;
   box-shadow: 0 0 0 1px var(--hairline);
   flex-shrink: 0;
 }
@@ -903,6 +909,21 @@ img {
 .adventure-card__body p.is-placeholder {
   font-style: italic;
   color: var(--hairline-strong);
+}
+
+/* ---------- Inline social icon link (next to org/venture names) ---------- */
+
+.org-social-link {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 6px;
+  color: var(--muted);
+  font-size: 0.85em;
+  transition: color 0.15s ease;
+}
+
+.org-social-link:hover {
+  color: var(--violet);
 }
 
 /* ---------- Skills ledger ---------- */
