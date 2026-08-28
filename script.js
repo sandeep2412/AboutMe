@@ -5,6 +5,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
 
+  // Respect reduced-motion: don't autoplay the cover video, let the user press play
+  const coverVideo = document.querySelector('.cover-video');
+  if (coverVideo && prefersReducedMotion) {
+    coverVideo.removeAttribute('autoplay');
+    coverVideo.pause();
+  }
+
   // Mobile nav toggle
   const navToggle = document.getElementById('navToggle');
   const tabs = document.getElementById('tabs');

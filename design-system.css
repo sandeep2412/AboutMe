@@ -509,6 +509,33 @@ img {
   margin-top: 26px;
 }
 
+/* ---------- Page-cover with a right-hand media column (e.g. Adventures video) ---------- */
+
+.page-cover__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: clamp(24px, 5vw, 48px);
+  align-items: center;
+}
+
+.cover-video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  background: var(--ink);
+}
+
+@media (max-width: 860px) {
+  .page-cover__grid {
+    grid-template-columns: 1fr;
+  }
+  .cover-video {
+    aspect-ratio: 16 / 9;
+  }
+}
+
 /* ---------- Highlight list (bullet points inside timeline entries) ---------- */
 
 .highlight-list {
@@ -825,6 +852,9 @@ img {
 }
 
 .tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-family: var(--font-mono);
   font-size: 10.5px;
   text-transform: uppercase;
@@ -833,6 +863,11 @@ img {
   padding: 5px 12px;
   color: var(--violet);
   background: rgba(108, 79, 214, 0.1);
+}
+
+.tag i,
+.tag [class*="devicon-"] {
+  font-size: 13px;
 }
 
 .case-card__link {
